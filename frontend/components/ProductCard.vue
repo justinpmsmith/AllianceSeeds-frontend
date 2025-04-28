@@ -63,7 +63,8 @@
             const cleanedString = this.product.photos.replace(/'/g, '"');
             const photoArray = JSON.parse(cleanedString);
             if (photoArray && photoArray.length > 0) {
-              return  photoArray[0];
+              // Return the first photo directly without modification
+              return photoArray[0];
             }
           }
           return null;
