@@ -21,7 +21,7 @@
           class="inline-flex items-center px-6 py-3 rounded-md bg-green-600 hover:bg-green-700 text-white font-medium transition-colors duration-300"
         >
           <i class="iconify mr-2" data-icon="mdi:seed"></i>
-          Browse Our Seeds
+          Browse Our Products
         </NuxtLink>
       </div>
     </div>

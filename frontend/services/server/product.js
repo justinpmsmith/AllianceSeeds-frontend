@@ -22,6 +22,8 @@ class Product extends ServerBase {
   static async getCategoryNames() {
     const endpoint = "/client/getCategoryNames";
     const response = await this.getRequest(endpoint);
+
+    console.log("category names: ", response);
     return response;
     // response = ["cat1", "cat2"]
   }
