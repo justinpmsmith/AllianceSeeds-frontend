@@ -2,7 +2,7 @@
   <div class="relative bg-gray-900 py-12">
     <div class="absolute inset-0 z-0 opacity-60">
       <img
-        src="/assets/static/images/home/productsHero.jpg"
+        src="/assets/static/images/home/clauseSeeds.jpg"
         :alt="title"
         class="w-full h-full object-cover"
         :onerror="`this.src='${fallbackImage}'`"
@@ -32,7 +32,7 @@ const props = defineProps({
   },
   fallbackImage: {
     type: String,
-    //   default: '/assets/static/images/home/hero-background.jpg'
+      default: '/assets/static/images/home/hero-background.jpg'
   },
 });
 </script>
