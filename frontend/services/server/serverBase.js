@@ -54,7 +54,6 @@ class ServerBase {
       };
 
       const response = await axios.request(config);
-      console.log("post response: ", response);
       return response.status === 200 ? response.data : null;
     } catch (error) {
       console.error(`${endpoint}: ${error.message}`);

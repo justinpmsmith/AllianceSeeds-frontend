@@ -59,6 +59,13 @@ class Product extends ServerBase {
     //   },
     // ]
   }
+
+  static async getProdCodesByCategory(category) {
+    const endpoint = "/client/getCategoryProdCodes";
+    const params = { category: category };
+    return await this.getRequest(endpoint, params);
+  }
+
   static async getProductByProdCode(prodCode) {
     const endpoint = "/client/getProductByProdCode";
     const params = { prodCode: prodCode };
@@ -125,64 +132,10 @@ class Product extends ServerBase {
   //     }
   }
 
-  static async addCtegory(data) {
-    // data = {name: "string", photo: "base64 string"}
-    const endpoint = "/admin/addCategory";
-    const response = await this.postRequest(endpoint, data);
-    return response;
-  }
 
-  static async addProduct(data) {
-    // let data = {
-    //   name: this.productName,
-    //   prodCode: this.prodCode,
-    //   category: this.category,
-    //   info: { description: this.description },
-    //   photos: JSON.stringify(images),
-    //   quantity: this.quantity,
-    //   document: json string
-    // };
 
-    const endpoint = "/admin/addProduct";
-    const response = await this.postRequest(endpoint, data);
-    return response;
-  }
 
-  static async updateProduct(data) {
-    // let data = {
-    //   name: this.productName,
-    //   prodCode: this.prodCode,
-    //   category: this.category,
-    //   info: { description: this.description },
-    //   photos: JSON.stringify(images),
-    //   quantity: this.quantity,
-    //   document: json string
-    // };
 
-    const endpoint = "/admin/updateProduct";
-    const response = await this.postRequest(endpoint, data);
-    return response;
-  }
-  static async updateCategory(data) {
-    // data = {name: "string", photo: "base64 string"}
-    const endpoint = "/admin/updateCategory";
-    const response = await this.postRequest(endpoint, data);
-    return response;
-  }
 
-  static async deleteCategory(categoryName) {
-    const endpoint = "/admin/deleteCategoryByName";
-    const params = { name: categoryName };
-    const response = await this.deleteRequest(endpoint, params);
-    return response;
-  }
-
-  static async deleteProductByProdCode(prodCode) {
-    // prodCode = "string prodCode"
-    const endpoint = "/admin/deleteProductByProdCode";
-    const params = { prodCode: prodCode };
-    const response = await this.deleteRequest(endpoint, params);
-    return response;
-  }
 }
 export default Product;
