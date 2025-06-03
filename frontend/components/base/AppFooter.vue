@@ -14,6 +14,25 @@
             <p class="text-gray-600 dark:text-gray-300">{{ companyInfo.contact.phone }}</p>
             <p class="text-gray-600 dark:text-gray-300">{{ companyInfo.contact.email }}</p>
           </div>
+          
+          <!-- Facebook Icon -->
+          <div class="mt-4">
+            <a 
+              :href="facebookUrl" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors inline-flex items-center"
+              aria-label="Visit our Facebook page"
+            >
+              <Icon 
+                name="logos:facebook" 
+                mode="svg" 
+                size="1.25rem"
+                class="mr-2"
+              />
+              Follow us on Facebook
+            </a>
+          </div>
         </div>
 
         <!-- Quick Links -->
@@ -64,6 +83,12 @@ import config from "~/config";
 
 export default {
   name: 'AppFooter',
+  
+  data() {
+    return {
+      facebookUrl: 'https://www.facebook.com/Alliance.Seeds/'
+    };
+  },
   
   computed: {
     currentYear() {

@@ -10,6 +10,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@iconify-icons/logos": "^1.2.36",
     "@nuxt/icon": "1.12.0",
     "axios": "^1.7.9",
     "nuxt": "^3.16.2",

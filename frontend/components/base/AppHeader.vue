@@ -10,31 +10,51 @@
         </NuxtLink>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex space-x-8">
-          <NuxtLink to="/" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400">
-            Home
+        <nav class="hidden md:flex space-x-8 items-center">
+          <NuxtLink 
+            v-for="(item, index) in navItems" 
+            :key="index" 
+            :to="item.path" 
+            class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400"
+          >
+            {{ item.name }}
           </NuxtLink>
-          <NuxtLink to="/products" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400">
-            Products
-          </NuxtLink>
-          <NuxtLink to="/brochures" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400">
-            Brochures
-          </NuxtLink>
-          <NuxtLink to="/articles" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400">
-            Articles
-          </NuxtLink>
-          <NuxtLink to="/about" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400">
-            About
-          </NuxtLink>
-          <NuxtLink to="/contact" class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400">
-            Contact
-          </NuxtLink>
+          
+          <!-- Facebook Icon -->
+          <a 
+            :href="facebookUrl" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
+            aria-label="Visit our Facebook page"
+          >
+            <Icon 
+              name="logos:facebook" 
+              mode="svg" 
+              size="1.5rem" 
+            />
+          </a>
         </nav>
 
         <!-- Mobile menu button -->
-        <div class="md:hidden">
+        <div class="md:hidden flex items-center space-x-3">
+          <!-- Facebook Icon for Mobile -->
+          <a 
+            :href="facebookUrl" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="text-gray-700 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400 transition-colors"
+            aria-label="Visit our Facebook page"
+          >
+            <Icon 
+              name="logos:facebook" 
+              mode="svg" 
+              size="1.5rem" 
+            />
+          </a>
+          
           <button 
-            @click="isMenuOpen = !isMenuOpen" 
+            @click="toggleMenu" 
             type="button" 
             class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
             aria-label="Toggle menu"
@@ -53,7 +73,7 @@
             :key="index" 
             :to="item.path" 
             class="text-gray-700 hover:text-green-600 dark:text-gray-300 dark:hover:text-green-400"
-            @click="isMenuOpen = false"
+            @click="closeMenu"
           >
             {{ item.name }}
           </NuxtLink>
@@ -63,17 +83,33 @@
   </header>
 </template>
 
-<script setup>
-import { ref } from 'vue';
-
-const isMenuOpen = ref(false);
-
-const navItems = [
-  { name: 'Home', path: '/' },
-  { name: 'Products', path: '/products' },
-  { name: 'Brochures', path: '/brochures' },
-  { name: 'Articles', path: '/articles' },
-  { name: 'About', path: '/about' },
-  { name: 'Contact', path: '/contact' }
-];
+<script>
+export default {
+  name: 'AppHeader',
+  
+  data() {
+    return {
+      isMenuOpen: false,
+      facebookUrl: 'https://www.facebook.com/Alliance.Seeds/',
+      navItems: [
+        { name: 'Home', path: '/' },
+        { name: 'Products', path: '/products' },
+        { name: 'Brochures', path: '/brochures' },
+        { name: 'Articles', path: '/articles' },
+        { name: 'About', path: '/about' },
+        { name: 'Contact', path: '/contact' }
+      ]
+    };
+  },
+  
+  methods: {
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen;
+    },
+    
+    closeMenu() {
+      this.isMenuOpen = false;
+    }
+  }
+};
 </script>
