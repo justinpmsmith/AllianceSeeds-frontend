@@ -15,11 +15,11 @@ export default {
     // Contact Details
     contact: {
       address: {
-        street: "12377 Seed Farm Road",
-        city: "Farmtown",
-        country: "South Africa"
+        street: "PO Box 214 White River, 1240",
+        city: "Mpumalanga",
+        country: "Mpumalanga, South Africa"
       },
-      phone: "+27 12 345 6789",
+      phone: "+2713 750 0575",
       email: "info@allianceseeds.co.za"
     },
 
@@ -30,12 +30,12 @@ export default {
         hours: "8:00 AM - 5:00 PM"
       },
       saturday: {
-        days: "Saturday", 
-        hours: "8:00 AM - 12:00 PM"
+        days: "Saturday - Sunday", 
+        hours: "closed"
       },
       sunday: {
-        days: "Sunday",
-        hours: "Closed"
+        days: "",
+        hours: ""
       },
     },
 

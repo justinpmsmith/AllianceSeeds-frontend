@@ -50,7 +50,7 @@
             <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transition-transform duration-300 transform group-hover:-translate-y-1 group-hover:shadow-lg">
               <div class="relative aspect-[16/9]">
                 <img 
-                  src="/assets/static/images/home/partner-agriculture.jpg" 
+                  src="/assets/static/images/home/do_agriculture_logo.png" 
                   alt="Department of Agriculture" 
                   class="w-full h-full object-contain p-4"
                 />
